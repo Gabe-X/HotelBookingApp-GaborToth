@@ -1,8 +1,10 @@
 package rooms;
 
+import java.time.LocalDate;
+
 public abstract class AbstractRoom {
-    public boolean isExtraBedNeeded;
-    public int isExtraBedPrice;
+    boolean isExtraBedNeeded;
+    int ExtraBedPrice;
     private int seasonBasedPrice;
 
     int getSeasonBasedDefaultPrice() {
@@ -10,6 +12,15 @@ public abstract class AbstractRoom {
     }
 
 
+
     abstract int calculateRoomPrice();
 
+    @Override
+    public String toString() {
+        return "AbstractRoom{" +
+                "isExtraBedNeeded=" + isExtraBedNeeded +
+                ", isExtraBedPrice=" + ExtraBedPrice +
+                ", seasonBasedPrice=" + seasonBasedPrice +
+                '}';
+    }
 }
