@@ -4,12 +4,10 @@ public class SuperiorRoom extends AbstractRoom {
     private int additionalRoomPrice = 3500;
 
     @Override
-    int calculateRoomPrice() {
-        return 0;
+    protected int calculateRoomPrice() {
+        return getSeasonBasedDefaultPrice() + additionalRoomPrice;
     }
 
-    int additionalRoomPrice() {
-
-        return getSeasonBasedDefaultPrice() + additionalRoomPrice;
+    public SuperiorRoom() {
     }
 }

@@ -1,4 +1,5 @@
 import bookingmanagment.BookingService;
+import rooms.KingRoom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,8 @@ public class HotelBookingApp {
         String breakfast = scnBooking.nextLine();
         bookingList.add(breakfast);
         System.out.println("What's your name?");
-        String bookingName = scnBooking.nextLine();
-        bookingList.add(bookingName);
+        String bookingPersonName = scnBooking.nextLine();
+        bookingList.add(bookingPersonName);
         System.out.println("which room do you wish to pick? Standard, Superior or King.");
         String roomType = scnBooking.nextLine();
         bookingList.add(roomType);
@@ -29,7 +30,6 @@ public class HotelBookingApp {
         String extraBed = scnBooking.nextLine();
         bookingList.add(extraBed);
         System.out.println("Booking details: " + bookingList);
-
 
 
     }

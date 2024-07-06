@@ -2,8 +2,9 @@ package rooms;
 
 public class StandardRoom extends AbstractRoom {
     @Override
-    int calculateRoomPrice() {
+   protected int calculateRoomPrice() {
         return getSeasonBasedDefaultPrice();
     }
-
+    public StandardRoom() {
+    }
 }

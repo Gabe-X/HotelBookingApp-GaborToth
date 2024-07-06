@@ -24,6 +24,5 @@ public class Booking {
                 ", bookingName='" + bookingName + '\'' +
                 ", breakfastPrice=" + breakfastPrice +
                 '}';
-
     }
 }

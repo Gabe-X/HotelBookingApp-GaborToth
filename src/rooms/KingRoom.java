@@ -8,6 +8,7 @@ public class KingRoom extends AbstractRoom {
         return getSeasonBasedDefaultPrice() + additionalRoomPrice;
     }
 
-
+    public KingRoom() {
+    }
 }
 
