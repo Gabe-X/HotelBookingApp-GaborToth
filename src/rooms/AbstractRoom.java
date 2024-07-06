@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public abstract class AbstractRoom {
     boolean isExtraBedNeeded;
-    int ExtraBedPrice;
+    int ExtraBedPrice=3000 ;
     private int seasonBasedPrice;
 
     int getSeasonBasedDefaultPrice() {

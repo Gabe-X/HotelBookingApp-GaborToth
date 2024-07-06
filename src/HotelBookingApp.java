@@ -1,3 +1,4 @@
+import bookingmanagment.Booking;
 import bookingmanagment.BookingService;
 import rooms.KingRoom;
 
@@ -30,6 +31,8 @@ public class HotelBookingApp {
         String extraBed = scnBooking.nextLine();
         bookingList.add(extraBed);
         System.out.println("Booking details: " + bookingList);
+
+        BookingService bookingService = new BookingService();
 
 
     }

@@ -3,11 +3,15 @@ package rooms;
 public class SuperiorRoom extends AbstractRoom {
     private int additionalRoomPrice = 3500;
 
-    @Override
-    protected int calculateRoomPrice() {
-        return getSeasonBasedDefaultPrice() + additionalRoomPrice;
+    public SuperiorRoom() {
     }
 
-    public SuperiorRoom() {
+    @Override
+    protected int calculateRoomPrice() {
+        int roomPrice = 0;
+        if (isExtraBedNeeded)
+            roomPrice = ExtraBedPrice;
+        roomPrice += getSeasonBasedDefaultPrice() + additionalRoomPrice;
+        return roomPrice;
     }
 }
