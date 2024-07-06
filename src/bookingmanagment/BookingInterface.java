@@ -5,5 +5,4 @@ import java.util.ArrayList;
 public interface BookingInterface {
      void newBooking(ArrayList<String> newBooking);
 
-
 }
