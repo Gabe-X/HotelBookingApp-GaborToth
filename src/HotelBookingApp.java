@@ -1,3 +1,5 @@
+import bookingmanagment.BookingService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,7 +28,9 @@ public class HotelBookingApp {
         System.out.println("Do you need an extra bed?");
         String extraBed = scnBooking.nextLine();
         bookingList.add(extraBed);
-        System.out.println(bookingList);
+        System.out.println("Booking details: " + bookingList);
+
+
 
     }
 }

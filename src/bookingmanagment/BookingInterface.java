@@ -3,6 +3,6 @@ package bookingmanagment;
 import java.util.ArrayList;
 
 public interface BookingInterface {
-     void newBooking(ArrayList<String> newBooking);
+    void newBooking(ArrayList<String> newBooking);
 
 }
