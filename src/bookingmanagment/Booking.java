@@ -1,15 +1,11 @@
 package bookingmanagment;
 
 public class Booking {
-    BookingService bookingOne = new BookingService();
-    //  KingRoom kingRoom = new KingRoom();
-    //  StandardRoom standardRoom = new StandardRoom();
-    //  SuperiorRoom superiorRoom = new SuperiorRoom();
-    private int roomPrice;
-    private int person;
-    private int days;
-    private String bookingName;
-    private boolean breakfastPrice;
+    private final int roomPrice;
+    private final int person;
+    private final int days;
+    private final String bookingName;
+    private final boolean breakfastPrice;
 
     public Booking(int roomPrice, int person, int days, String bookingName, boolean breakfastPrice) {
         this.roomPrice = roomPrice;
@@ -20,69 +16,74 @@ public class Booking {
     }
 
     public int getTotalCost() {
-        int totalCost = roomPrice * days * person;
+        int totalCost = 0;
+       /* if (person % 2 == 0){
+            totalCost += roomPrice;
+        } else if (person % 2 == 1)
+            totalCost += roomPrice + roomPrice;*/
+        totalCost = roomPrice * person * days;
         if (breakfastPrice)
             totalCost += 4500 * days * person;
-        System.out.println(totalCost + "HUF");
         return totalCost;
     }
 
-    public int getRoomPrice() {
-        return roomPrice;
-    }
+    /*
+        public int getRoomPrice() {
+            return roomPrice;
+        }
 
-    public void setRoomPrice(int roomPrice) {
-        this.roomPrice = roomPrice;
-    }
+        public void setRoomPrice(int roomPrice) {
+            this.roomPrice = roomPrice;
+        }
 
-    public int getPerson() {
-        return person;
-    }
+        public int getPerson() {
+            return person;
+        }
 
-    public void setPerson(int person) {
-        this.person = person;
-    }
+        public void setPerson(int person) {
+            this.person = person;
+        }
 
-    public int getDays() {
-        return days;
-    }
+        public int getDays() {
+            return days;
+        }
 
-    public void setDays(int days) {
-        this.days = days;
-    }
+        public void setDays(int days) {
+            this.days = days;
+        }
 
-    public String getBookingName() {
-        return bookingName;
-    }
+        public String getBookingName() {
+            return bookingName;
+        }
 
-    public void setBookingName(String bookingName) {
-        this.bookingName = bookingName;
-    }
+        public void setBookingName(String bookingName) {
+            this.bookingName = bookingName;
+        }
 
-    public boolean isBreakfastPrice() {
-        return breakfastPrice;
-    }
+        public boolean isBreakfastPrice() {
+            return breakfastPrice;
+        }
 
-    public void setBreakfastPrice(boolean breakfastPrice) {
-        this.breakfastPrice = breakfastPrice;
-    }
+        public void setBreakfastPrice(boolean breakfastPrice) {
+            this.breakfastPrice = breakfastPrice;
+        }
 
-    public BookingService getBookingOne() {
-        return bookingOne;
-    }
+        public BookingService getBookingOne() {
+            return bookingOne;
+        }
 
-    public void setBookingOne(BookingService bookingOne) {
-        this.bookingOne = bookingOne;
-    }
-
+        public void setBookingOne(BookingService bookingOne) {
+            this.bookingOne = bookingOne;
+        }
+    */
     @Override
     public String toString() {
-        return "Booking{" +
+        return "Booking details{" +
                 "roomPrice=" + roomPrice +
-                ", person=" + person +
-                ", days=" + days +
+                ", number of guests=" + person +
+                ", days to stay=" + days +
                 ", bookingName='" + bookingName + '\'' +
-                ", breakfastPrice=" + breakfastPrice +
+                ", asked for breakfast=" + breakfastPrice +
                 '}';
     }
 

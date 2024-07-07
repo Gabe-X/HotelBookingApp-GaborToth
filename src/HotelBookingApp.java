@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class HotelBookingApp {
     public static void main(String[] args) {
+        //   BookingService bookingService = new BookingService();
+
         ArrayList<String> bookingList = new ArrayList<>();
         Scanner scnBooking = new Scanner(System.in);
         String stringToList = "";
@@ -32,14 +34,14 @@ public class HotelBookingApp {
         String extraBed = scnBooking.nextLine();
         stringToList = personCount + ", " + numberOfDays + ", " + breakfast + ", " + bookingPersonName + ", " + roomType + ", " + extraBed;
         bookingList.add(stringToList);
-        System.out.println("Booking details: " + bookingList);
-            //  9.a
-        //  BookingService bookingService = new BookingService();
         //  bookingService.newBooking(bookingList);
+        //  System.out.println(bookingService);
+        System.out.println("Booking details: " + bookingList);
+        //  9.a
         KingRoom kingRoom = new KingRoom();
         StandardRoom standardRoom = new StandardRoom();
         SuperiorRoom superiorRoom = new SuperiorRoom();
-            //  9.b
+        //  9.b
         int bookingRoomPrice = 0;
         switch (roomType) {
             case "Standard":
@@ -55,25 +57,31 @@ public class HotelBookingApp {
                 System.out.println("Please recheck your room options");
                 System.err.println("Typing error at room options");
 
-
         }
         System.out.println(bookingRoomPrice);
-            //  9.c
+        //  9.c
         for (String booking : bookingList) {
             // "2","6","yes","name","King","yes"
             String[] bookingArrayParameter = booking.split(", ");
             int personNumberArray = Integer.parseInt(bookingArrayParameter[0]);
             int daysArray = Integer.parseInt(bookingArrayParameter[1]);
-            boolean breakfastArray = Boolean.parseBoolean(bookingArrayParameter[2]);
+            // String breakfastArray = bookingArrayParameter[2];
+            boolean breakfastStringToArray;
+            breakfastStringToArray = bookingArrayParameter[2].equals("yes");
             String personBookingArray = bookingArrayParameter[3];
             String roomTypeArray = bookingArrayParameter[4];
             boolean extraBedArray = Boolean.parseBoolean(bookingArrayParameter[5]);
 
-            Booking bookingOne = new Booking(bookingRoomPrice, personNumberArray, daysArray, personBookingArray, breakfastArray);
+            Booking bookingOne = new Booking(bookingRoomPrice, personNumberArray, daysArray, personBookingArray, breakfastStringToArray);
             // 9.d
             int bookingCost = bookingOne.getTotalCost();
-            System.out.println("Total booking cost: " + bookingCost);
+            System.out.println("Your booking details are: " + bookingOne);
+
+            System.out.println("Total booking cost: " + bookingCost + " Ft");
             System.out.println(bookingOne);
+            System.out.println("Enjoy your stay!");
+            System.out.println("--------");
+
         }
     }
 }
