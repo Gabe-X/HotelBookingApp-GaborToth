@@ -2,6 +2,9 @@ package bookingmanagment;
 
 public class Booking {
     BookingService bookingOne = new BookingService();
+    //  KingRoom kingRoom = new KingRoom();
+    //  StandardRoom standardRoom = new StandardRoom();
+    //  SuperiorRoom superiorRoom = new SuperiorRoom();
     private int roomPrice;
     private int person;
     private int days;
@@ -14,13 +17,13 @@ public class Booking {
         this.days = days;
         this.bookingName = bookingName;
         this.breakfastPrice = breakfastPrice;
-
     }
 
     public int getTotalCost() {
-        int totalCost = roomPrice * person * days;
+        int totalCost = roomPrice * days * person;
         if (breakfastPrice)
             totalCost += 4500 * days * person;
+        System.out.println(totalCost + "HUF");
         return totalCost;
     }
 

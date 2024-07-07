@@ -7,7 +7,7 @@ public class KingRoom extends AbstractRoom {
     }
 
     @Override
-    protected int calculateRoomPrice() {
+    public int calculateRoomPrice() {
         int roomPrice = 0;
         if (isExtraBedNeeded)
             roomPrice = ExtraBedPrice;

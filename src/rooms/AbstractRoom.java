@@ -14,8 +14,8 @@ public abstract class AbstractRoom {
         LocalDate date3 = LocalDate.of(2024, 6, 1);
         LocalDate date4 = LocalDate.of(2024, 8, 31);
         LocalDate date5 = LocalDate.of(2024, 9, 1);
-        LocalDate date6 = LocalDate.of(2024, 11, 31);
-        LocalDate date7 = LocalDate.of(2024, 11, 30);
+        LocalDate date6 = LocalDate.of(2024, 11, 30);
+        LocalDate date7 = LocalDate.of(2024, 12, 31);
         LocalDate date8 = LocalDate.of(2025, 2, 28);
 
         if (now.isAfter(date1) && now.isBefore(date2)) {
